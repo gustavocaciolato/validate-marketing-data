@@ -1,0 +1,12 @@
+{
+  "routes": {
+    "validate-campaign": {
+      "path": "/_v/private/validate-campaign",
+      "public": false,
+      "method": "POST",
+      "middlewares": [
+        "validateCampaign"
+      ]
+    }
+  }
+}

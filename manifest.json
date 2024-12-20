@@ -1,0 +1,45 @@
+{
+  "name": "validate-marketing-data",
+  "vendor": "americanas",
+  "version": "0.0.1",
+  "title": "Validate marketingdata",
+  "description": "This app validates the marketing data of Quiosque",
+  "dependencies": {
+    "vtex.api": "7.x",
+    "vtex.checkout-graphql": "0.x"
+  },
+  "builders": {
+    "node": "6.x",
+    "service": "2.x"
+  },
+  "scripts": {
+    "prereleasy": "bash lint.sh"
+  },
+  "credentialType": "absolute",
+  "policies": [
+    {
+      "name": "colossus-fire-event"
+    },
+    {
+      "name": "colossus-write-logs"
+    },
+    {
+      "name": "vbase-read-write"
+    },
+    {
+      "name": "outbound-access",
+      "attributes": {
+        "host": "api.vtex.com"
+      }
+    },
+    {
+      "name": "ADMIN_DS",
+      "attributes": {
+        "roles": [
+          "dataManager"
+        ]
+      }
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}
